@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="yes-gwt">
+    <output-path>$PROJECT_DIR$/out/artifacts/untitled6_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="gwtready-websockets/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="gwtready-websockets" />
+        </element>
+        <element id="directory" name="lib" />
+      </element>
+      <element id="gwt-compiler-output" facet="gwtready-websockets/gwt/GWT" />
+    </root>
+  </artifact>
+</component>

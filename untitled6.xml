@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="untitled6" default="all">
+  
+  
+  <property file="untitled6.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="128m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/*.lib/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/.bundle/**"/>
+    <exclude name="**/*.rbc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.ear"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.swc"/>
+    <include name="*.ane"/>
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.6" value="${jdk.home.1.6}/bin"/>
+  <path id="jdk.classpath.1.6">
+    <fileset dir="${jdk.home.1.6}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.6}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.6}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.6"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.gwt-user.classpath">
+    <pathelement location="D:/java/gwt/gwt-2.6.0/gwt-user.jar"/>
+  </path>
+  
+  <path id="library.javax.websocket-api-1.0.classpath">
+    <pathelement location="D:/java/app-servers/jetty-distribution-9.1.0.v20131115/lib/websocket/javax.websocket-api-1.0.jar"/>
+  </path>
+  
+  
+  <!-- Global Libraries -->
+  
+  
+  <!-- Application Server Libraries -->
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module untitled6 -->
+  
+  <dirname property="module.untitled6.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.untitled6" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.untitled6" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.untitled6" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.untitled6" value="${compiler.args}"/>
+  
+  <property name="untitled6.output.dir" value="${module.untitled6.basedir}/out/production/untitled6"/>
+  <property name="untitled6.testoutput.dir" value="${module.untitled6.basedir}/out/test/untitled6"/>
+  
+  <path id="untitled6.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="untitled6.module.production.classpath">
+    <path refid="${module.jdk.classpath.untitled6}"/>
+    <path refid="library.gwt-user.classpath"/>
+    <pathelement location="D:/java/gwt/gwt-2.6.0/gwt-dev.jar"/>
+    <path refid="library.javax.websocket-api-1.0.classpath"/>
+  </path>
+  
+  <path id="untitled6.runtime.production.module.classpath">
+    <pathelement location="${untitled6.output.dir}"/>
+    <path refid="library.gwt-user.classpath"/>
+    <pathelement location="D:/java/gwt/gwt-2.6.0/gwt-dev.jar"/>
+    <path refid="library.javax.websocket-api-1.0.classpath"/>
+  </path>
+  
+  <path id="untitled6.module.classpath">
+    <path refid="${module.jdk.classpath.untitled6}"/>
+    <pathelement location="${untitled6.output.dir}"/>
+    <path refid="library.gwt-user.classpath"/>
+    <pathelement location="D:/java/gwt/gwt-2.6.0/gwt-dev.jar"/>
+    <path refid="library.javax.websocket-api-1.0.classpath"/>
+  </path>
+  
+  <path id="untitled6.runtime.module.classpath">
+    <pathelement location="${untitled6.testoutput.dir}"/>
+    <pathelement location="${untitled6.output.dir}"/>
+    <path refid="library.gwt-user.classpath"/>
+    <pathelement location="D:/java/gwt/gwt-2.6.0/gwt-dev.jar"/>
+    <path refid="library.javax.websocket-api-1.0.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.untitled6">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.untitled6">
+    <patternset refid="excluded.from.module.untitled6"/>
+  </patternset>
+  
+  <path id="untitled6.module.sourcepath">
+    <dirset dir="${module.untitled6.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.untitled6" depends="compile.module.untitled6.production,compile.module.untitled6.tests" description="Compile module untitled6"/>
+  
+  <target name="compile.module.untitled6.production" description="Compile module untitled6; production classes">
+    <mkdir dir="${untitled6.output.dir}"/>
+    <javac destdir="${untitled6.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.untitled6}/javac">
+      <compilerarg line="${compiler.args.untitled6}"/>
+      <bootclasspath refid="untitled6.module.bootclasspath"/>
+      <classpath refid="untitled6.module.production.classpath"/>
+      <src refid="untitled6.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.untitled6"/>
+    </javac>
+    
+    <copy todir="${untitled6.output.dir}">
+      <fileset dir="${module.untitled6.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.untitled6.tests" depends="compile.module.untitled6.production" description="compile module untitled6; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.untitled6" description="cleanup module">
+    <delete dir="${untitled6.output.dir}"/>
+    <delete dir="${untitled6.testoutput.dir}"/>
+  </target>
+  
+  <property name="gwt.compiler.output.untitled6" value="${module.untitled6.basedir}/GWTCompilerOutput_untitled6"/>
+  
+  <!-- Run GWT compiler for GWT module ${gwt.module.name} -->
+  <target name="run.gwt.compiler.untitled6" description="Run GWT compiler">
+    <java fork="true" jvm="${module.jdk.bin.untitled6}/java" classname="com.google.gwt.dev.Compiler">
+      <jvmarg line="-Xmx256m"/>
+      <classpath>
+        <pathelement location="${gwt.sdk.home.untitled6}/gwt-dev.jar"/>
+        <path refid="untitled6.module.sourcepath"/>
+        <path refid="untitled6.module.classpath"/>
+      </classpath>
+      <arg value="-logLevel"/>
+      <arg value="WARN"/>
+      <arg value="-war"/>
+      <arg value="${gwt.compiler.output.untitled6}"/>
+      <arg value="-style"/>
+      <arg value="DETAILED"/>
+      <arg value="${gwt.module.name}"/>
+    </java>
+  </target>
+  
+  <target name="compile.gwt.untitled6" depends="compile.module.untitled6" description="Compile all GWT modules in module untitled6">
+    <property name="gwt.sdk.home.untitled6" value="${gwt.sdk.home}"/>
+    <antcall target="run.gwt.compiler.untitled6">
+      <param name="gwt.module.name" value="org.arielviera.gwt.websockets.MySampleApplication"/>
+    </antcall>
+  </target>
+  
+  <target name="clean.gwt.compiler.output" description="Clean GWT Compiler output directories">
+    <delete dir="${gwt.compiler.output.untitled6}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.untitled6, clean.artifact.no-gwt, clean.artifact.yes-gwt, clean.gwt.compiler.output" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.gwt.untitled6" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.no-gwt" value="${basedir}/out/artifacts/no_gwt"/>
+    <property name="artifact.output.yes-gwt" value="${basedir}/out/artifacts/untitled6_war_exploded"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="clean.artifact.no-gwt" description="clean no-gwt artifact output">
+    <delete dir="${artifact.output.no-gwt}"/>
+  </target>
+  
+  <target name="clean.artifact.yes-gwt" description="clean yes-gwt artifact output">
+    <delete dir="${artifact.output.yes-gwt}"/>
+  </target>
+  
+  <target name="artifact.no-gwt" depends="init.artifacts, compile.module.untitled6" description="Build &#39;no-gwt&#39; artifact">
+    <mkdir dir="${artifact.output.no-gwt}"/>
+    <mkdir dir="${artifact.output.no-gwt}/WEB-INF"/>
+    <mkdir dir="${artifact.output.no-gwt}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.no-gwt}/WEB-INF/classes">
+      <fileset dir="${untitled6.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.output.no-gwt}/WEB-INF/lib"/>
+    <copy file="D:/java/app-servers/jetty-distribution-9.1.0.v20131115/lib/websocket/javax.websocket-api-1.0.jar" tofile="${artifact.output.no-gwt}/WEB-INF/lib/javax.websocket-api-1.0.jar"/>
+    <copy todir="${artifact.output.no-gwt}">
+      <fileset dir="${basedir}/web"/>
+    </copy>
+    <mkdir dir="${artifact.output.no-gwt}/WEB-INF"/>
+    <copy file="${basedir}/web/WEB-INF/web.xml" tofile="${artifact.output.no-gwt}/WEB-INF/web.xml"/>
+  </target>
+  
+  <target name="artifact.yes-gwt" depends="init.artifacts, compile.module.untitled6" description="Build &#39;yes-gwt&#39; artifact">
+    <mkdir dir="${artifact.output.yes-gwt}"/>
+    <copy todir="${artifact.output.yes-gwt}">
+      <fileset dir="${basedir}/web"/>
+    </copy>
+    <mkdir dir="${artifact.output.yes-gwt}/WEB-INF"/>
+    <copy file="${basedir}/web/WEB-INF/web.xml" tofile="${artifact.output.yes-gwt}/WEB-INF/web.xml"/>
+    <mkdir dir="${artifact.output.yes-gwt}/WEB-INF"/>
+    <mkdir dir="${artifact.output.yes-gwt}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.yes-gwt}/WEB-INF/classes">
+      <fileset dir="${untitled6.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.output.yes-gwt}/WEB-INF/lib"/>
+    <copy file="D:/java/gwt/gwt-2.6.0/gwt-servlet.jar" tofile="${artifact.output.yes-gwt}/WEB-INF/lib/gwt-servlet.jar"/>
+    <copy file="D:/java/app-servers/jetty-distribution-9.1.0.v20131115/lib/websocket/javax.websocket-api-1.0.jar" tofile="${artifact.output.yes-gwt}/WEB-INF/lib/javax.websocket-api-1.0.jar"/>
+    <copy todir="${artifact.output.yes-gwt}">
+      <fileset dir="${gwt.compiler.output.untitled6}"/>
+    </copy>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.no-gwt, artifact.yes-gwt" description="Build all artifacts">
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>
